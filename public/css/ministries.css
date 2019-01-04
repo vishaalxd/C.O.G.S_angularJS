@@ -1,0 +1,43 @@
+.title-text{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 36px;
+    padding-top: 120px;
+    margin: 0 auto;
+}
+
+.overlay-title{
+
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.26);
+    text-align: center;
+  
+    height:190px;
+}
+
+.m-links{
+    font-size: 18px;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.m-section{
+    margin: 0 ;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+#m-about{
+    color:black;
+    margin-top:40px;
+    text-align: left;
+}
+
+.m-title{
+    color:black;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}

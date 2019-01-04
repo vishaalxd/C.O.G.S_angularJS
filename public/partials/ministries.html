@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" href="/public/css/ministries.css"/>
+
+<!--BG- Images-->
+<div>
+<div class="bg-clipper-1">
+    <div class="foreground-image">
+        <img class="fd-imgs" src="images/bg.jpg" alt="image.jpg">
+    </div>
+</div>
+<div class="overlay-title">
+    <p class="title-text">Ministries</p>
+</div>
+
+<div ng-repeat="org in data" class="cogs" style="display: block" >
+        <div class="m-title">{{org.org}}</div>
+        <div style="display:flex;justify-content: center;">
+    <div class="m-section">
+        <div class="m-links" ng-click="bio(org)">Bio</div>
+        <div class="m-links" ng-click="gallery(org)">Gallery</div>
+        <div class="m-links" ng-click="members(org)">Active Members</div>
+        <div class="m-links" ng-click="locations(org)">Locations</div>
+        <div class="m-links" ng-click="contact(org)">Contact</div>
+    </div>
+  
+    <div class="cogs-container" style="height:200px;">
+            <div id="m-about">
+                    {{org.Bio}}
+                </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script>
+
+
+
+//             mPage.config(['$routeProvider',
+//                 ($routeProvider) => {
+//                     $routeProvider.
+//                         when('/bio', {
+//                             templateUrl: 'ministries/bio.html'
+//                         }).
+//                         when('/location', {
+//                             templateUrl: 'ministries/locations.html',
+//                             // controller: 'SimpleController'
+//                         })
+//                         when('/contact', {
+//                             templateUrl: 'ministries/mcontacts.html'
+//                         }).
+//                         when('/members', {
+//                             templateUrl: 'ministries/members.html',
+//                             // controller: 'SimpleController'
+//                         })
+//                         when('/gallery', {
+//                             templateUrl: 'gallery.html'
+//                         }).
+//                         otherwise({
+//                             redirectTo:'ministries/bio'
+//                         })
+//                 }
+//             ]);
+
+</script>
+
+
+

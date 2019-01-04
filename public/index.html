@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Cinzel|Poppins" rel="stylesheet">
+
+
+    <title>C.O.G.S</title>
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Church Of God, Sharjah</title>
+</head>
+
+<body ng-app="mapp" ng-controller="SimpleController">
+    <div class="container-fluid">
+
+
+
+        <!-- Header-->
+        <header ng-include="'partials/header.html'"></header>
+
+
+        <!-- Main Carousal-->
+        <!-- <main ng-include src="'partials/start.html'"></main> -->
+        <main ng-view></main>
+
+
+
+        <!-- footer-->
+        <main ng-include="'partials/footer.html'"></main>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js" type="text/javascript"></script>
+    <script src="libs/angular-route.js" type="text/javascript"></script>
+    <!-- <script src="libs/angular-animate.js" type="text/javascript"></script> -->
+
+    <script>
+        var mapp = angular.module('mapp', ['ngRoute']);
+
+        // Routes
+         mapp.
+            config(['$routeProvider',
+                ($routeProvider) => {
+                    $routeProvider.
+                        when('/ministries', {
+                            templateUrl: 'partials/ministries.html',
+                            controller: 'LinkController'
+                        }).
+                        when('/home', {
+                            templateUrl: 'partials/start.html',
+                            controller: 'SimpleController'
+                        }).
+                        when('/contact', {
+                            templateUrl: 'partials/contact.html',
+                            controller: 'ContactController'
+                        }).
+                        when('/gallery', {
+                            templateUrl: 'partials/gallery.html',
+                            controller: 'SimpleController'
+                        }).
+                        when('/about', {
+                            templateUrl: 'partials/about.html',
+                            controller: 'SimpleController'
+                        })
+                        .otherwise({
+                            redirectTo: '/home',
+                        });
+                }
+            ]); 
+
+
+        mapp.controller('SimpleController', function($scope){
+            $scope.check = 0;
+            $scope.visited = 0;
+            $scope.init = setInterval(function () {
+                let carousal = document.querySelector('.timing-carousal');
+                if (!$scope.check) {
+                    $scope.visited = 0;
+                    carousal.classList.add("timing-animate");
+                    $scope.check = 1;
+                    console.log("0 " + carousal.classList + $scope.check);
+
+                }
+                else if ($scope.check == 1) {
+                    if (!$scope.visited) {
+                        carousal.classList.remove("timing-animate");
+                        carousal.classList.add("timing-animate2");
+                        $scope.check = 2;
+                        // console.log("1" + carousal.classList);
+                    }
+                    else {
+                        carousal.classList.remove("timing-animate");
+                        $scope.check = 0;
+                    }
+                }
+                else if ($scope.check == 2) {
+                    if (!$scope.visited) {
+                        carousal.classList.remove("timing-animate2");
+                        carousal.classList.add("timing-animate");
+                        $scope.check = 1;
+                        $scope.visited = 1;
+                        // console.log("2");
+                    }
+                    else {
+                        visited = 0;
+                    }
+                }
+            }, 4000);
+        });
+
+        mapp.controller('ContactController', function($scope){
+            $scope.lineAnimate = setInterval(function(){
+                let ele = document.querySelector(".line");
+                if(ele.classList.contains("line-animate")){
+                    ele.classList.remove("line-animate");
+                }
+                else ele.classList.add("line-animate");
+            }
+        ,2000);});
+
+        mapp.controller('LinkController', function($scope){
+            $scope.data = [
+                {
+                    org : "CGMF",
+                    Bio : "ABC",
+                    ActiveMembers : "BCD",
+                    Contact : "12345",
+                    Gallery : "path",
+                    Locations : "12134redfs"
+                },
+                {
+                    org : "SS",
+                    Bio : "SS123",
+                    ActiveMembers : "SSsdsadsa",
+                    Contact : "SSxcxx",
+                    Gallery : "zxzz",
+                    Locations : "12134redfs"
+                },
+                {
+                    org : "YPE",
+                    Bio : "YPEsdsd",
+                    ActiveMembers : "YPExxxc",
+                    Contact : "YPEsd",
+                    Gallery : "sdss",
+                    Locations : "12134redfs"
+                },
+                {
+                    org : "Associations",
+                    Bio : "ABC",
+                    ActiveMembers : "BCD",
+                    Contact : "12345",
+                    Gallery : "path",
+                    Locations : "12134redfs"
+                }
+            ]
+
+            
+            $scope.bio = function(val){
+                    let ele = document.querySelector("#m-about");
+                    console.log(ele);
+                    ele.innerHTML = val.Bio;
+
+                    // let ele2 = document.querySelectorAll(".m-links");
+                    // ele2[0].innerHTML = "Bio";
+                    // ele2[1].innerHTML = "Gallery";
+                    // ele2[2].innerHTML = "Active Members";
+                    // ele2[3].innerHTML = "Locations";
+                    // ele2[4].innerHTML = "Contact";
+
+
+
+                    // console.log(val.bio);
+                }
+
+                $scope.contact = function(val){
+                    console.log(val);
+                    let ele = document.querySelector("#m-about");
+                    console.log(ele);
+                    ele.innerHTML = val.Contact;
+                    // console.log(val.contact);
+                }
+
+                $scope.members = function(val){
+                    let ele = document.querySelector("#m-about");
+                    console.log(ele);
+                    ele.innerHTML = val.ActiveMembers;
+                    // console.log(val.members);
+                }
+
+                $scope.gallery = function(val){
+                    
+                    let ele = document.querySelector("#m-about");
+                    console.log(ele);
+                    ele.innerHTML = val.Gallery;
+                    // console.log(val.gallery);
+                }
+
+                $scope.locations = function(val){
+                    let ele = document.querySelector("#m-about");
+                    console.log(ele);
+                    ele.innerHTML = val.Locations;
+                }
+            
+        });
+
+
+    </script>
+</body>
+
+</html>

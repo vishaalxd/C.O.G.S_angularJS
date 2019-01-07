@@ -8,6 +8,43 @@ body {
 
 }
 
+.home {
+    background-size : contain;
+    height: 60px;
+    width: 60px; 
+}
+
+.home-nav{
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    width:150px;
+    letter-spacing: 1.48px;
+    font-size: 24px;
+    font-family: 'Advent Pro', sans-serif;
+ 
+    height:40px;
+    text-align: center;
+    /* color: #373F47;  */
+    color: rgba(245, 245, 245, 0.945); 
+}
+
+.title-text{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 36px;
+    padding-top: 120px;
+    margin: 0 auto;
+}
+
+.overlay-title{
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.26);
+    text-align: center;
+  
+    height:190px;
+}
+
 a{
     text-decoration: none;
     color: rgba(245, 245, 245, 0.945); 
@@ -39,10 +76,18 @@ a{
   
 }
 
+.home:hover{
+    animation-delay: 20ms;
+    transition: all .1s ease-in-out;
+     color:  rgb(255, 255, 255);
+     transform:scale(1.2);
+     font-weight: 700;
+}
+
 
 .navbar-item:hover{
     animation-delay: 20ms;
-transition: ease-in;
+transition: all .2s ease-in;
  border-bottom: 3px solid #f0a400;
  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.11), rgba(3, 3, 3, 0.527));
  color:  rgb(255, 255, 255);
@@ -164,10 +209,6 @@ li{
     /* border-bottom: 1px solid rgba(63, 63, 63, 0.253); */
     box-shadow: 0px 6px 13px -9px #0000004f;
    
-}
-
-.animate{
-    
 }
 
 .service-timings h4 {

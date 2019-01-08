@@ -32,11 +32,12 @@
     text-align: left;
 }
 
-.m-title{
+#m-title{
     color:black;
     padding-top: 30px;
     padding-bottom: 20px;
-    font-size: 30px;
+    font-size: 28px;
+    text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1.68px;
 }

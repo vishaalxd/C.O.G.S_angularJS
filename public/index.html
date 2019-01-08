@@ -128,7 +128,7 @@
 
         mapp.controller('LinkController', function($scope){
             $scope.data = [
-                {
+                   {
                     org : "CGMF",
                     Bio : "ABC",
                     ActiveMembers : "BCD",
@@ -161,12 +161,11 @@
                     Locations : "12134redfs"
                 }
             ]
-
             
             $scope.bio = function(val){
                     let ele = document.querySelector("#m-about");
                     console.log(ele);
-                    ele.innerHTML = val.Bio;
+                    ele.textContent = val.Bio;
 
                     // let ele2 = document.querySelectorAll(".m-links");
                     // ele2[0].innerHTML = "Bio";
@@ -184,14 +183,18 @@
                     console.log(val);
                     let ele = document.querySelector("#m-about");
                     console.log(ele);
-                    ele.innerHTML = val.Contact;
+                    ele.textContent = val.Contact;
                     // console.log(val.contact);
                 }
+
+                
+
+
 
                 $scope.members = function(val){
                     let ele = document.querySelector("#m-about");
                     console.log(ele);
-                    ele.innerHTML = val.ActiveMembers;
+                    ele.textContent =  val.ActiveMembers;
                     // console.log(val.members);
                 }
 
@@ -199,14 +202,32 @@
                     
                     let ele = document.querySelector("#m-about");
                     console.log(ele);
-                    ele.innerHTML = val.Gallery;
+                    ele.textContent =  val.Gallery;
                     // console.log(val.gallery);
                 }
 
                 $scope.locations = function(val){
                     let ele = document.querySelector("#m-about");
                     console.log(ele);
-                    ele.innerHTML = val.Locations;
+                    ele.textContent =  val.Locations;
+                }
+
+                $scope.clicked = function (obj,ch ){
+                    if(ch == "b" ){
+                        $scope.bio(obj);
+                    }
+                    if(ch == "c" ){
+                        $scope.contact(this.obj);
+                    }
+                    if(ch == "g" ){
+                        $scope.gallery(this.obj);
+                    }
+                    if(ch == "m" ){
+                        $scope.members(this.obj);
+                    }
+                    if(ch == "l" ){
+                        $scope.locations(this.obj);
+                    }
                 }
             
         });

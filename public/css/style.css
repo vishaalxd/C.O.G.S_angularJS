@@ -85,6 +85,8 @@ a{
 }
 
 
+
+
 .navbar-item:hover{
     animation-delay: 20ms;
 transition: all .2s ease-in;

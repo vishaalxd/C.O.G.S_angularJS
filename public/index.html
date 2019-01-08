@@ -132,59 +132,51 @@
 
 
             disp.data = [
-                {
-                    org: "CGMF",
-                    Bio: "ABC",
+                {   
+                    key:"SS",
+                    org: "Scripture School",
+                    Bio: "Scripture School, COG-Sharjah: This ministry is dedicated to our children from pre-kindergarten to teenagers, focused on raising a generation that is rooted deeply in the Word of God and enriched by the Presence of God. Our Scripture School classes are conducted every Saturday, from 6:15 pm to 8:15 pm at Hall # 6 & 7, Union Church.At present, we have more than 150 students attending our Scripture School. We have an excellent team of dedicated teachers & support staff, anointed choir, talented musicians, under the leadership of our Pastors and Head Master.",
                     ActiveMembers: "BCD",
                     Contact: "12345",
                     Gallery: "path",
                     Locations: "12134redfs"
                 },
                 {
-                    org: "SS",
-                    Bio: "SS123",
+                    key:"YPE",
+                    org: "Young People's Endeavour",
+                    Bio: "aScripture School, COG-Sharjah: This ministry is dedicated to our children from pre-kindergarten to teenagers, focused on raising a generation that is rooted deeply in the Word of God and enriched by the Presence of God. Our Scripture School classes are conducted every Saturday, from 6:15 pm to 8:15 pm at Hall # 6 & 7, Union Church.At present, we have more than 150 students attending our Scripture School. We have an excellent team of dedicated teachers & support staff, anointed choir, talented musicians, under the leadership of our Pastors and Head Master.",
                     ActiveMembers: "SSsdsadsa",
                     Contact: "SSxcxx",
                     Gallery: "zxzz",
                     Locations: "12134redfs"
                 },
                 {
-                    org: "YPE",
-                    Bio: "YPEsdsd",
+                    key:"CGMF",
+                    org: "Church of God, Malayalam Fellowship",
+                    Bio: "aaScripture School, COG-Sharjah: This ministry is dedicated to our children from pre-kindergarten to teenagers, focused on raising a generation that is rooted deeply in the Word of God and enriched by the Presence of God. Our Scripture School classes are conducted every Saturday, from 6:15 pm to 8:15 pm at Hall # 6 & 7, Union Church.At present, we have more than 150 students attending our Scripture School. We have an excellent team of dedicated teachers & support staff, anointed choir, talented musicians, under the leadership of our Pastors and Head Master.",
                     ActiveMembers: "YPExxxc",
                     Contact: "YPEsd",
                     Gallery: "sdss",
                     Locations: "12134redfs"
                 },
-                {
-                    org: "Associations",
-                    Bio: "ABC",
-                    ActiveMembers: "BCD",
-                    Contact: "12345",
-                    Gallery: "path",
-                    Locations: "12134redfs"
-                }
+
             ]
 
             disp.bio = function (obj) {
                 // let ele = document.querySelector("#m-about");
                 var ele;
-                if (obj.org == "YPE") {
+                if (obj.key == "YPE") {
                     ele = document.querySelector('.YPE');
                     ele.innerHTML = obj.Bio
                     console.log(obj);
                     console.log(ele);
                 }
-                else if (obj.org == "SS") {
+                else if (obj.key == "SS") {
                     ele = document.querySelector(".SS");
                     ele.innerHTML = obj.Bio
                 }
-                else if (obj.org == "CGMF") {
-                    ele = document.querySelector(".CGMF");
-                    ele.innerHTML = obj.Bio
-                }
                 else {
-                     ele = document.querySelector(".Associations");
+                     ele = document.querySelector(".CGMF");
                      ele.innerHTML = obj.Bio
                 }
                 
@@ -193,22 +185,18 @@
 
             disp.contact = function (obj) {
                 var ele;
-                if (obj.org == "YPE") {
+                if (obj.key == "YPE") {
                     ele = document.querySelector('.YPE');
                     ele.innerHTML = obj.Contact
                     console.log(obj);
                     console.log(ele);
                 }
-                else if (obj.org == "SS") {
+                else if (obj.key == "SS") {
                     ele = document.querySelector(".SS");
                     ele.innerHTML = obj.Contact
                 }
-                else if (obj.org == "CGMF") {
-                    ele = document.querySelector(".CGMF");
-                    ele.innerHTML = obj.Contact
-                }
                 else {
-                     ele = document.querySelector(".Associations");
+                     ele = document.querySelector(".CGMF");
                      ele.innerHTML = obj.Contact
                 }
             }
@@ -219,22 +207,18 @@
 
             disp.members = function (obj) {
                 var ele;
-                if (obj.org == "YPE") {
+                if (obj.key == "YPE") {
                     ele = document.querySelector('.YPE');
                     ele.innerHTML = obj.ActiveMembers
                     console.log(obj);
                     console.log(ele);
                 }
-                else if (obj.org == "SS") {
+                else if (obj.key == "SS") {
                     ele = document.querySelector(".SS");
                     ele.innerHTML = obj.ActiveMembers
                 }
-                else if (obj.org == "CGMF") {
-                    ele = document.querySelector(".CGMF");
-                    ele.innerHTML = obj.ActiveMembers
-                }
                 else {
-                     ele = document.querySelector(".Associations");
+                     ele = document.querySelector(".CGMF");
                      ele.innerHTML = obj.ActiveMembers
                 }
             }
@@ -242,22 +226,18 @@
             disp.gallery = function (obj) {
 
                 var ele;
-                if (obj.org == "YPE") {
+                if (obj.key == "YPE") {
                     ele = document.querySelector('.YPE');
                     ele.innerHTML = obj.Gallery
                     console.log(obj);
                     console.log(ele);
                 }
-                else if (obj.org == "SS") {
+                else if (obj.key == "SS") {
                     ele = document.querySelector(".SS");
                     ele.innerHTML = obj.Gallery
                 }
-                else if (obj.org == "CGMF") {
-                    ele = document.querySelector(".CGMF");
-                    ele.innerHTML = obj.Gallery
-                }
                 else {
-                     ele = document.querySelector(".Associations");
+                     ele = document.querySelector(".CGMF");
                      ele.innerHTML = obj.Gallery
                 }
             }
@@ -265,22 +245,18 @@
             disp.locations = function (obj) {
                 // let ele = document.querySelector("#m-about");
                 var ele;
-                if (obj.org == "YPE") {
+                if (obj.key == "YPE") {
                     ele = document.querySelector('.YPE');
                     ele.innerHTML = obj.Locations
                     console.log(obj);
                     console.log(ele);
                 }
-                else if (obj.org == "SS") {
+                else if (obj.key == "SS") {
                     ele = document.querySelector(".SS");
                     ele.innerHTML = obj.Locations
                 }
-                else if (obj.org == "CGMF") {
-                    ele = document.querySelector(".CGMF");
-                    ele.innerHTML = obj.Locations
-                }
                 else {
-                     ele = document.querySelector(".Associations");
+                     ele = document.querySelector(".CGMF");
                      ele.innerHTML = obj.Locations
                 }
             }

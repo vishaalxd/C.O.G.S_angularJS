@@ -46,7 +46,7 @@
         var mapp = angular.module('mapp', ['ngRoute']);
 
         // Routes
-         mapp.
+        mapp.
             config(['$routeProvider',
                 ($routeProvider) => {
                     $routeProvider.
@@ -74,10 +74,10 @@
                             redirectTo: '/home',
                         });
                 }
-            ]); 
+            ]);
 
 
-        mapp.controller('SimpleController', function($scope){
+        mapp.controller('SimpleController', function ($scope) {
             $scope.check = 0;
             $scope.visited = 0;
             $scope.init = setInterval(function () {
@@ -116,121 +116,178 @@
             }, 4000);
         });
 
-        mapp.controller('ContactController', function($scope){
-            $scope.lineAnimate = setInterval(function(){
+        mapp.controller('ContactController', function ($scope) {
+            $scope.lineAnimate = setInterval(function () {
                 let ele = document.querySelector(".line");
-                if(ele.classList.contains("line-animate")){
+                if (ele.classList.contains("line-animate")) {
                     ele.classList.remove("line-animate");
                 }
                 else ele.classList.add("line-animate");
             }
-        ,2000);});
+                , 2000);
+        });
 
-        mapp.controller('LinkController', function($scope){
-            $scope.data = [
-                   {
-                    org : "CGMF",
-                    Bio : "ABC",
-                    ActiveMembers : "BCD",
-                    Contact : "12345",
-                    Gallery : "path",
-                    Locations : "12134redfs"
+        mapp.controller('LinkController', ['$scope', function ($scope) {
+            var disp = $scope;
+
+
+            disp.data = [
+                {
+                    org: "CGMF",
+                    Bio: "ABC",
+                    ActiveMembers: "BCD",
+                    Contact: "12345",
+                    Gallery: "path",
+                    Locations: "12134redfs"
                 },
                 {
-                    org : "SS",
-                    Bio : "SS123",
-                    ActiveMembers : "SSsdsadsa",
-                    Contact : "SSxcxx",
-                    Gallery : "zxzz",
-                    Locations : "12134redfs"
+                    org: "SS",
+                    Bio: "SS123",
+                    ActiveMembers: "SSsdsadsa",
+                    Contact: "SSxcxx",
+                    Gallery: "zxzz",
+                    Locations: "12134redfs"
                 },
                 {
-                    org : "YPE",
-                    Bio : "YPEsdsd",
-                    ActiveMembers : "YPExxxc",
-                    Contact : "YPEsd",
-                    Gallery : "sdss",
-                    Locations : "12134redfs"
+                    org: "YPE",
+                    Bio: "YPEsdsd",
+                    ActiveMembers: "YPExxxc",
+                    Contact: "YPEsd",
+                    Gallery: "sdss",
+                    Locations: "12134redfs"
                 },
                 {
-                    org : "Associations",
-                    Bio : "ABC",
-                    ActiveMembers : "BCD",
-                    Contact : "12345",
-                    Gallery : "path",
-                    Locations : "12134redfs"
+                    org: "Associations",
+                    Bio: "ABC",
+                    ActiveMembers: "BCD",
+                    Contact: "12345",
+                    Gallery: "path",
+                    Locations: "12134redfs"
                 }
             ]
-            
-            $scope.bio = function(val){
-                    let ele = document.querySelector("#m-about");
+
+            disp.bio = function (obj) {
+                // let ele = document.querySelector("#m-about");
+                var ele;
+                if (obj.org == "YPE") {
+                    ele = document.querySelector('.YPE');
+                    ele.innerHTML = obj.Bio
+                    console.log(obj);
                     console.log(ele);
-                    ele.textContent = val.Bio;
-
-                    // let ele2 = document.querySelectorAll(".m-links");
-                    // ele2[0].innerHTML = "Bio";
-                    // ele2[1].innerHTML = "Gallery";
-                    // ele2[2].innerHTML = "Active Members";
-                    // ele2[3].innerHTML = "Locations";
-                    // ele2[4].innerHTML = "Contact";
-
-
-
-                    // console.log(val.bio);
                 }
-
-                $scope.contact = function(val){
-                    console.log(val);
-                    let ele = document.querySelector("#m-about");
-                    console.log(ele);
-                    ele.textContent = val.Contact;
-                    // console.log(val.contact);
+                else if (obj.org == "SS") {
+                    ele = document.querySelector(".SS");
+                    ele.innerHTML = obj.Bio
                 }
-
+                else if (obj.org == "CGMF") {
+                    ele = document.querySelector(".CGMF");
+                    ele.innerHTML = obj.Bio
+                }
+                else {
+                     ele = document.querySelector(".Associations");
+                     ele.innerHTML = obj.Bio
+                }
                 
 
+            }
 
-
-                $scope.members = function(val){
-                    let ele = document.querySelector("#m-about");
+            disp.contact = function (obj) {
+                var ele;
+                if (obj.org == "YPE") {
+                    ele = document.querySelector('.YPE');
+                    ele.innerHTML = obj.Contact
+                    console.log(obj);
                     console.log(ele);
-                    ele.textContent =  val.ActiveMembers;
-                    // console.log(val.members);
                 }
+                else if (obj.org == "SS") {
+                    ele = document.querySelector(".SS");
+                    ele.innerHTML = obj.Contact
+                }
+                else if (obj.org == "CGMF") {
+                    ele = document.querySelector(".CGMF");
+                    ele.innerHTML = obj.Contact
+                }
+                else {
+                     ele = document.querySelector(".Associations");
+                     ele.innerHTML = obj.Contact
+                }
+            }
 
-                $scope.gallery = function(val){
-                    
-                    let ele = document.querySelector("#m-about");
+
+
+
+
+            disp.members = function (obj) {
+                var ele;
+                if (obj.org == "YPE") {
+                    ele = document.querySelector('.YPE');
+                    ele.innerHTML = obj.ActiveMembers
+                    console.log(obj);
                     console.log(ele);
-                    ele.textContent =  val.Gallery;
-                    // console.log(val.gallery);
                 }
+                else if (obj.org == "SS") {
+                    ele = document.querySelector(".SS");
+                    ele.innerHTML = obj.ActiveMembers
+                }
+                else if (obj.org == "CGMF") {
+                    ele = document.querySelector(".CGMF");
+                    ele.innerHTML = obj.ActiveMembers
+                }
+                else {
+                     ele = document.querySelector(".Associations");
+                     ele.innerHTML = obj.ActiveMembers
+                }
+            }
 
-                $scope.locations = function(val){
-                    let ele = document.querySelector("#m-about");
+            disp.gallery = function (obj) {
+
+                var ele;
+                if (obj.org == "YPE") {
+                    ele = document.querySelector('.YPE');
+                    ele.innerHTML = obj.Gallery
+                    console.log(obj);
                     console.log(ele);
-                    ele.textContent =  val.Locations;
                 }
+                else if (obj.org == "SS") {
+                    ele = document.querySelector(".SS");
+                    ele.innerHTML = obj.Gallery
+                }
+                else if (obj.org == "CGMF") {
+                    ele = document.querySelector(".CGMF");
+                    ele.innerHTML = obj.Gallery
+                }
+                else {
+                     ele = document.querySelector(".Associations");
+                     ele.innerHTML = obj.Gallery
+                }
+            }
 
-                $scope.clicked = function (obj,ch ){
-                    if(ch == "b" ){
-                        $scope.bio(obj);
-                    }
-                    if(ch == "c" ){
-                        $scope.contact(this.obj);
-                    }
-                    if(ch == "g" ){
-                        $scope.gallery(this.obj);
-                    }
-                    if(ch == "m" ){
-                        $scope.members(this.obj);
-                    }
-                    if(ch == "l" ){
-                        $scope.locations(this.obj);
-                    }
+            disp.locations = function (obj) {
+                // let ele = document.querySelector("#m-about");
+                var ele;
+                if (obj.org == "YPE") {
+                    ele = document.querySelector('.YPE');
+                    ele.innerHTML = obj.Locations
+                    console.log(obj);
+                    console.log(ele);
                 }
-            
-        });
+                else if (obj.org == "SS") {
+                    ele = document.querySelector(".SS");
+                    ele.innerHTML = obj.Locations
+                }
+                else if (obj.org == "CGMF") {
+                    ele = document.querySelector(".CGMF");
+                    ele.innerHTML = obj.Locations
+                }
+                else {
+                     ele = document.querySelector(".Associations");
+                     ele.innerHTML = obj.Locations
+                }
+            }
+
+            }
+
+        ]);
 
 
     </script>

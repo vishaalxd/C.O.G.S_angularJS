@@ -15,16 +15,16 @@
         <div class="m-title">{{org.org}}</div>
         <div style="display:flex;justify-content: center;">
     <div class="m-section">
-        <div class="m-links" ng-click="bio(org,b)">Bio</div>
-        <div class="m-links" ng-click="gallery(org,g)">Gallery</div>
-        <div class="m-links" ng-click="members(org,m)">Active Members</div>
-        <div class="m-links" ng-click="locations(org,l)">Locations</div>
-        <div class="m-links" ng-click="contact(org,c)">Contact</div>
+        <div class="m-links"  ng-click="bio(org)">Bio</div>
+        <div class="m-links" ng-click="gallery(org)">Gallery</div>
+        <div class="m-links" ng-click="members(org)">Active Members</div>
+        <div class="m-links" ng-click="locations(org)">Locations</div>
+        <div class="m-links" ng-click="contact(org)">Contact</div>
     </div>
   
     <div class="cogs-container" style="height:200px;">
-            <div id="m-about" ng-class="" ng-bind="org.clicked">
-                    {{org.Bio}}
+            <div id="m-about" ng-class="org.org">
+                    {{org.Contact}}
                 </div>
     </div>
 </div>

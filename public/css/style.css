@@ -628,3 +628,18 @@ justify-items: center;
     border-right: 1px solid rgba(184, 184, 184, 0.301);
     box-shadow: -25px -1px 27px -24px rgba(0,0,0,0.1);
 }
+
+
+/* Duplicates */
+
+
+/* Ministries */
+#m-title{
+    color:rgb(27, 27, 27);
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.68px;
+}
